@@ -1,9 +1,9 @@
 [submodule "anjab-abk-backend"]
 	path = anjab-abk-backend
-	url = ./anjab-abk-backend
+	url = https://github.com/cakrawala-tumbuh/anjab-abk-backend.git
 [submodule "anjab-abk-mcp"]
 	path = anjab-abk-mcp
-	url = ./anjab-abk-mcp
+	url = https://github.com/cakrawala-tumbuh/anjab-abk-mcp.git
 [submodule "anjab-abk-web-app"]
 	path = anjab-abk-web-app
-	url = ./anjab-abk-web-app
+	url = https://github.com/cakrawala-tumbuh/anjab-abk-web-app.git
