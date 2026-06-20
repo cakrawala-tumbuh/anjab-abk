@@ -7,3 +7,6 @@
 [submodule "anjab-abk-web-app"]
 	path = anjab-abk-web-app
 	url = https://github.com/cakrawala-tumbuh/anjab-abk-web-app.git
+[submodule "anjab-abk-ypii"]
+	path = anjab-abk-ypii
+	url = https://github.com/cakrawala-tumbuh/anjab-abk-ypii-docker-compose.git
