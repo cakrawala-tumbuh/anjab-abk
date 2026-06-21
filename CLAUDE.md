@@ -47,6 +47,24 @@ git submodule add <url> <path>
 - Jabatan di lingkungan yayasan pendidikan mencakup: pengurus yayasan, kepala sekolah, wakil kepala sekolah, guru (per mata pelajaran/kelas), staf tata usaha, tenaga kependidikan (pustakawan, laboran, dll.), dan tenaga pendukung (satpam, kebersihan, dll.).
 - **UnitKerja** dalam konteks ini bisa berupa: yayasan (pusat), satuan pendidikan, atau sub-unit dalam sekolah (mis. divisi kurikulum, kesiswaan).
 
+## Task Inventory — Alur 3 Tahap
+
+Pengisian Task Inventory dibagi menjadi **3 tahap** dengan status sesi: `DRAFT → TAHAP1 → TAHAP2 → TAHAP3 → CLOSED → ANALYZED`.
+
+| Tahap | Aktor | Deskripsi |
+|---|---|---|
+| **Tahap 1** | Anggota SME panel | Pilih task yang relevan untuk jabatan. Partisipan di >1 panel harus isi per panel. |
+| **Tahap 2** | Koordinator SME panel | Review task yang tidak dipilih unanimously di Tahap 1; tentukan setuju/tidak. |
+| **Tahap 3** | Anggota SME panel | Isi detail CalHR (5 komponen) per task. Task yang masuk = unanimous ∪ koordinator-disetujui. |
+
+### Aturan teknis Task Inventory
+
+- **`koordinator_id`** disimpan di `TiSesi`; koordinator akses review via `GET/POST /sesi/{id}/tahap2`.
+- **Freeze task** terjadi di transisi TAHAP2→TAHAP3 (`mulai-tahap3`): `final = unanimous ∪ coordinator_approved`.
+- Task **unanimous** (semua anggota pilih) otomatis masuk tanpa review koordinator.
+- Task **partial** (sebagian pilih) ditampilkan di halaman review koordinator (`/task-inventory/tahap2/{sesi_id}`).
+- Partisipan mengisi detail di `/task-inventory/tahap3/{responden_id}`.
+
 ## Development Guidelines
 
 - Commit message ditulis dalam **Bahasa Indonesia**.
