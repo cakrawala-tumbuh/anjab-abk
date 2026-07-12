@@ -1,0 +1,363 @@
+kode,role_name,jenis,detail
+KS-ALL-LEAD-004,Kepala Sekolah,DIBUANG_RETIRE,Final_Decision = Retire
+KS-ALL-ADMIN-006,Kepala Sekolah,DIBUANG_RETIRE,Final_Decision = Retire
+KS-ALL-LEAD-007,Kepala Sekolah,DIBUANG_RETIRE,Final_Decision = Retire
+KS-ALL-ADMIN-010,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+KS-ALL-ADMIN-011,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+KS-ALL-STUSUP-008,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+KS-ALL-STUSUP-009,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+KS-ALL-LEAD-014,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-015,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-016,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-027,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-LEAD-028,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-LEAD-029,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-LEAD-032,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-LEAD-037,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+KS-ALL-LEAD-041,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-LEAD-042,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-LEAD-043,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+KS-ALL-ADMIN-020,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-046,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-047,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+KS-ALL-LEAD-051,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+KS-ALL-LEAD-059,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+KS-ALL-LEAD-060,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+KS-ALL-LEAD-062,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-063,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-STUSUP-012,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+KS-ALL-STUSUP-013,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+KS-ALL-STUSUP-014,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+KS-ALL-STUSUP-016,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+KS-ALL-STUSUP-017,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+KS-ALL-LEAD-064,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KS-ALL-LEAD-065,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+KS-ALL-LEAD-066,Kepala Sekolah,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-003,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKKUR-ALL-LEAD-009,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-014,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-015,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.91, metode=frekuensi+cluster (n=34), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-016,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKKUR-ALL-LEAD-016,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.82, metode=frekuensi (n=120), perlu_review=tidak)"
+WKKUR-ALL-PD-006,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.82, metode=frekuensi (n=120), perlu_review=tidak)"
+WKKUR-ALL-PD-007,Wakil Kepala Sekolah Bidang Kurikulum,DIBUANG_RETIRE,Final_Decision = Retire
+WKKUR-ALL-ADMIN-021,Wakil Kepala Sekolah Bidang Kurikulum,DIBUANG_RETIRE,Final_Decision = Retire
+WKKUR-ALL-ADMIN-028,Wakil Kepala Sekolah Bidang Kurikulum,DIBUANG_RETIRE,Final_Decision = Retire
+WKKUR-ALL-ADMIN-032,Wakil Kepala Sekolah Bidang Kurikulum,DIBUANG_RETIRE,Final_Decision = Retire
+WKKUR-ALL-LEAD-059,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKKUR-ALL-INST-007,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-044,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-045,Wakil Kepala Sekolah Bidang Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKKUR-ALL-ADMIN-047,Wakil Kepala Sekolah Bidang Kurikulum,DIBUANG_RETIRE,Final_Decision = Retire
+WKSIS-ALL-LEAD-003,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-002,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKSIS-ALL-LEAD-018,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSIS-ALL-LEAD-019,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSIS-ALL-LEAD-024,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSIS-ALL-STUSUP-006,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+WKSIS-ALL-STUSUP-007,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+WKSIS-ALL-LEAD-028,Wakil Kepala Sekolah Bidang Kesiswaan,DIBUANG_RETIRE,Final_Decision = Retire
+WKSIS-ALL-STUSUP-023,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WKSIS-ALL-LEAD-029,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WKSIS-ALL-LEAD-031,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSIS-ALL-LEAD-032,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-011,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-012,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSIS-ALL-LEAD-035,Wakil Kepala Sekolah Bidang Kesiswaan,DIBUANG_RETIRE,Final_Decision = Retire
+WKSIS-ALL-LEAD-036,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.91, metode=frekuensi+cluster (n=34), perlu_review=tidak)"
+WKSIS-ALL-STUSUP-025,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.86, metode=frekuensi+cluster (n=14), perlu_review=tidak)"
+WKSIS-ALL-STUSUP-026,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.95, metode=frekuensi+cluster (n=20), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-013,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSIS-ALL-STUSUP-033,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WKSIS-ALL-ADMIN-017,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-018,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKSIS-ALL-ADMIN-019,Wakil Kepala Sekolah Bidang Kesiswaan,DIBUANG_RETIRE,Final_Decision = Retire
+WKSIS-ALL-ADMIN-020,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKSIS-ALL-ADMIN-021,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKSIS-ALL-ADMIN-022,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKSIS-ALL-ADMIN-023,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-024,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-025,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKSIS-ALL-ADMIN-026,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-028,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKSIS-ALL-LEAD-040,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+WKSIS-ALL-LEAD-043,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-029,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSIS-ALL-ADMIN-030,Wakil Kepala Sekolah Bidang Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-001,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-002,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-LEAD-004,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+WKSAR-ALL-STUSUP-002,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.86, metode=frekuensi+cluster (n=14), perlu_review=tidak)"
+WKSAR-ALL-LEAD-010,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-005,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-STUSUP-003,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSAR-ALL-STUSUP-006,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WKSAR-ALL-LEAD-014,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+WKSAR-ALL-LEAD-016,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=0.93, metode=frekuensi (n=72), perlu_review=tidak)"
+WKSAR-ALL-LEAD-017,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=1.00, metode=frekuensi+cluster (n=16), perlu_review=tidak)"
+WKSAR-ALL-LEAD-019,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=1.00, metode=frekuensi+cluster (n=16), perlu_review=tidak)"
+WKSAR-ALL-LEAD-023,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSAR-ALL-LEAD-024,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-006,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-007,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-008,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKSAR-ALL-LEAD-025,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-009,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-LEAD-026,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-LEAD-027,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-010,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKSAR-ALL-LEAD-028,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+WKSAR-ALL-ADMIN-011,Wakil Kepala Sekolah Bidang Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKHUM-ALL-STRAT-001,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.69, metode=frekuensi (n=200), perlu_review=ya)"
+WKHUM-ALL-STRAT-002,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.82, metode=frekuensi (n=120), perlu_review=tidak)"
+WKHUM-ALL-ADMIN-001,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+WKHUM-ALL-LEAD-003,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+WKHUM-ALL-STUSUP-002,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+WKHUM-ALL-LEAD-006,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+WKHUM-ALL-ADMIN-002,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKHUM-ALL-LEAD-007,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+WKHUM-ALL-ADMIN-003,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+WKHUM-ALL-STRAT-004,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.86, metode=frekuensi (n=109), perlu_review=tidak)"
+WKHUM-ALL-STRAT-005,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.80, metode=frekuensi+cluster (n=5), perlu_review=tidak)"
+WKHUM-ALL-STRAT-006,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+WKHUM-ALL-ADMIN-004,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=0.96, metode=frekuensi+cluster (n=25), perlu_review=tidak)"
+WKHUM-ALL-LEAD-009,Wakil Kepala Sekolah Bidang Humas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+STKUR-ALL-LEAD-001,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-ADMIN-001,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STKUR-ALL-ADMIN-002,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STKUR-ALL-LEAD-005,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STKUR-ALL-ADMIN-005,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STKUR-ALL-ADMIN-006,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.91, metode=frekuensi+cluster (n=34), perlu_review=tidak)"
+STKUR-ALL-LEAD-006,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=1.00, metode=frekuensi+cluster (n=16), perlu_review=tidak)"
+STKUR-ALL-ADMIN-007,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STKUR-ALL-LEAD-008,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=1.00, metode=frekuensi+cluster (n=16), perlu_review=tidak)"
+STKUR-ALL-ADMIN-008,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STKUR-ALL-ADMIN-009,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STKUR-ALL-ADMIN-010,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STKUR-ALL-LEAD-012,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+STKUR-ALL-LEAD-014,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.88, metode=frekuensi+cluster (n=116), perlu_review=tidak)"
+STKUR-ALL-LEAD-015,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STKUR-ALL-LEAD-016,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-017,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-ADMIN-013,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STKUR-ALL-LEAD-019,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STKUR-ALL-LEAD-020,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-021,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-022,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-ADMIN-016,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STKUR-ALL-LEAD-023,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-INST-003,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-024,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-ADMIN-017,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STKUR-ALL-LEAD-025,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-037,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+STKUR-ALL-INST-007,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+STKUR-ALL-LEAD-043,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STKUR-ALL-LEAD-044,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-047,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-048,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-049,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STKUR-ALL-LEAD-050,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STKUR-ALL-LEAD-051,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STKUR-ALL-LEAD-052,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-LEAD-053,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STKUR-ALL-INST-011,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.83, metode=frekuensi+cluster (n=18), perlu_review=tidak)"
+STKUR-ALL-LEAD-054,Staff Kurikulum,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.73, metode=frekuensi+cluster (n=67), perlu_review=ya)"
+STSIS-ALL-LEAD-001,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Mingguan' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=1.00, metode=frekuensi+cluster (n=16), perlu_review=tidak)"
+STSIS-ALL-ADMIN-001,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-ADMIN-002,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-ADMIN-003,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-LEAD-012,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+STSIS-ALL-ADMIN-007,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSIS-ALL-STUSUP-003,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+STSIS-ALL-STUSUP-004,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.93, metode=frekuensi+cluster (n=41), perlu_review=tidak)"
+STSIS-ALL-STUSUP-005,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+STSIS-ALL-STUSUP-006,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+STSIS-ALL-STUSUP-020,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+STSIS-ALL-LEAD-018,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+STSIS-ALL-LEAD-020,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+STSIS-ALL-ADMIN-010,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSIS-ALL-ADMIN-011,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSIS-ALL-LEAD-021,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-STUSUP-021,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+STSIS-ALL-STUSUP-022,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.86, metode=frekuensi+cluster (n=14), perlu_review=tidak)"
+STSIS-ALL-LEAD-022,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STSIS-ALL-STUSUP-026,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.86, metode=frekuensi+cluster (n=14), perlu_review=tidak)"
+STSIS-ALL-ADMIN-012,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=0.96, metode=frekuensi+cluster (n=25), perlu_review=tidak)"
+STSIS-ALL-ADMIN-013,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+STSIS-ALL-STUSUP-029,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.65, metode=frekuensi+cluster (n=17), perlu_review=ya)"
+STSIS-ALL-LEAD-024,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Tahunan' AA_asli='Tahunan' -> kondisi='Peak' frekuensi='Tahunan' (keyakinan=0.86, metode=frekuensi+cluster (n=87), perlu_review=tidak)"
+STSIS-ALL-ADMIN-015,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STSIS-ALL-ADMIN-016,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-ADMIN-017,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STSIS-ALL-ADMIN-018,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STSIS-ALL-ADMIN-019,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Semesteran' AA_asli='Semesteran' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=0.70, metode=frekuensi+cluster (n=88), perlu_review=ya)"
+STSIS-ALL-ADMIN-020,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-ADMIN-021,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=frekuensi+cluster (n=26), perlu_review=tidak)"
+STSIS-ALL-LEAD-025,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STSIS-ALL-LEAD-026,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STSIS-ALL-LEAD-027,Staff Kesiswaan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Bulanan' AA_asli='Bulanan' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=0.94, metode=frekuensi+cluster (n=52), perlu_review=tidak)"
+STSIS-ALL-LEAD-028,Staff Kesiswaan,DIBUANG_RETIRE,Final_Decision = Retire
+STSAR-ALL-STUSUP-001,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+STSAR-ALL-LEAD-012,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-LEAD-014,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-LEAD-015,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+STSAR-ALL-LEAD-017,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-LEAD-018,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-LEAD-019,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-LEAD-020,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-LEAD-021,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+STSAR-ALL-ADMIN-005,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.91, metode=frekuensi+cluster (n=34), perlu_review=tidak)"
+STSAR-ALL-LEAD-026,Staff Sarana Prasarana,SUMBER_BUKTI_DISALIN_DARI_INDUK,Formal_Actual='Perlu Validasi' -> 'Formal' (induk kanonik STSAR-ALL-LEAD-025)
+STSAR-ALL-LEAD-026,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_PERLU_VALIDASI,"Z_asli='Perlu Validasi' AA_asli='Perlu Validasi' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.90, metode=salin dari induk kanonik STSAR-ALL-LEAD-025 (ditunjuk Reviewer_Notes; Duty_Area & Sub_Duty identik), perlu_review=tidak)"
+STSAR-ALL-LEAD-027,Staff Sarana Prasarana,SUMBER_BUKTI_DISALIN_DARI_INDUK,Formal_Actual='Perlu Validasi' -> 'Formal' (induk kanonik STSAR-ALL-LEAD-025)
+STSAR-ALL-LEAD-027,Staff Sarana Prasarana,KONDISI_DIREKONSTRUKSI_Z_PERLU_VALIDASI,"Z_asli='Perlu Validasi' AA_asli='Perlu Validasi' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.90, metode=salin dari induk kanonik STSAR-ALL-LEAD-025 (ditunjuk Reviewer_Notes; Duty_Area & Sub_Duty identik), perlu_review=tidak)"
+WK-ALL-STUSUP-006,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-ADMIN-007,Wali Kelas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WK-ALL-STUSUP-017,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-STUSUP-021,Wali Kelas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WK-ALL-STRAT-001,Wali Kelas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WK-ALL-LEAD-007,Wali Kelas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WK-ALL-STUSUP-022,Wali Kelas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WK-ALL-STUSUP-024,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-STUSUP-033,Wali Kelas,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+WK-ALL-INST-001,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-002,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-003,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-004,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-005,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-006,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-007,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-008,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-LEAD-009,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-LEAD-010,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-LEAD-011,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-009,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-010,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-011,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-012,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-013,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-014,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-015,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-016,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-017,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-018,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-019,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-020,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-021,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-022,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-023,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-024,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+WK-ALL-INST-025,Wali Kelas,DIBUANG_RETIRE,Final_Decision = Retire
+GKSD-SD-STUSUP-001,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Semesteran' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Semesteran' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-STUSUP-002,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GKSD-SD-STUSUP-003,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Mingguan' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-PD-001,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Harian' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-INST-001,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=1.00, metode=frekuensi+cluster (n=8), perlu_review=tidak)"
+GKSD-SD-ADMIN-001,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=0.96, metode=frekuensi+cluster (n=25), perlu_review=tidak)"
+GKSD-SD-INST-002,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=1.00, metode=frekuensi+cluster (n=8), perlu_review=tidak)"
+GKSD-SD-INST-003,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=1.00, metode=frekuensi+cluster (n=8), perlu_review=tidak)"
+GKSD-SD-ADMIN-002,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-STUSUP-005,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Harian' AA_asli='Harian' -> kondisi='Baseline' frekuensi='Harian' (keyakinan=0.71, metode=frekuensi+cluster (n=14), perlu_review=ya)"
+GKSD-SD-STUSUP-006,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-STUSUP-007,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GKSD-SD-PD-002,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-PD-003,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Semesteran' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Semesteran' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-STUSUP-008,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Semesteran' AA_asli='Peak' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-ADMIN-003,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Semesteran' AA_asli='Peak' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-ADMIN-004,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Semesteran' AA_asli='Peak' -> kondisi='Peak' frekuensi='Semesteran' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-INST-004,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Peak' -> kondisi='Peak' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-STUSUP-009,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Baseline' -> kondisi='Baseline' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-INST-005,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Peak' -> kondisi='Peak' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GKSD-SD-INST-006,Guru Kelas SD,KONDISI_DIREKONSTRUKSI_TERTUKAR,"Z_asli='Bulanan' AA_asli='Peak' -> kondisi='Peak' frekuensi='Bulanan' (keyakinan=1.00, metode=pemulihan pasti: Z & AA tertukar, tinggal ditukar balik, perlu_review=tidak)"
+GBS-ALL-ADMIN-001,Guru Bidang Studi,DIBUANG_RETIRE,Final_Decision = Retire
+GBS-ALL-INST-001,Guru Bidang Studi,DIBUANG_RETIRE,Final_Decision = Retire
+GBK-ALL-STUSUP-006,Guru BK,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GBK-ALL-STUSUP-007,Guru BK,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GBK-ALL-STUSUP-008,Guru BK,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GBK-ALL-STUSUP-009,Guru BK,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GBK-ALL-STUSUP-010,Guru BK,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GPD1-ALL-STUSUP-005,Guru Pendamping,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+GPD2-ALL-PD-001,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-PD-002,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-001,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-002,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-003,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-001,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-004,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-LEAD-001,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-LEAD-003,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-005,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-002,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-003,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-006,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-004,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-005,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-006,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-PD-003,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-STUSUP-007,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-007,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+GPD2-ALL-ADMIN-008,Guru Pendamping,DIBUANG_RETIRE,Final_Decision = Retire
+PEK-ALL-STUSUP-001,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-LEAD-001,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+PEK-ALL-STUSUP-002,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-LEAD-002,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-LEAD-003,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+PEK-ALL-ADMIN-001,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-ADMIN-002,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-STUSUP-004,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-ADMIN-003,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-LEAD-005,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-LEAD-006,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-LEAD-007,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-STUSUP-011,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-STUSUP-012,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-LEAD-008,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-LEAD-009,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-LEAD-010,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+PEK-ALL-STUSUP-018,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PEK-ALL-ADMIN-006,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PEK-ALL-LEAD-011,Pelatih Ekstra Kurikuler,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+POSIS-ALL-STUSUP-005,Pembina OSIS,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Mingguan' -> kondisi='Baseline' frekuensi='Mingguan' (keyakinan=0.95, metode=frekuensi+cluster (n=20), perlu_review=tidak)"
+POSIS-ALL-STUSUP-006,Pembina OSIS,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+KPRAM-ALL-STUSUP-004,Koordinator Pramuka,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+KPRAM-ALL-LEAD-003,Koordinator Pramuka,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.91, metode=frekuensi+cluster (n=46), perlu_review=tidak)"
+KPRAM-ALL-PD-001,Koordinator Pramuka,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.82, metode=frekuensi (n=120), perlu_review=tidak)"
+PIC2-ALL-LEAD-001,PIC Kegiatan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Baseline' frekuensi='Insidental' (keyakinan=0.64, metode=frekuensi+cluster (n=22), perlu_review=ya)"
+PIC2-ALL-ADMIN-001,PIC Kegiatan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PIC2-ALL-ADMIN-002,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-003,PIC Kegiatan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PIC2-ALL-ADMIN-004,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-005,PIC Kegiatan,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+PIC2-ALL-ADMIN-006,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-007,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-008,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-009,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-010,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-002,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-011,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-012,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-003,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-006,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-007,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-008,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-009,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-012,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-013,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-015,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-018,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-019,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-020,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-013,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-014,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-021,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-ADMIN-016,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-023,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-024,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-025,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-026,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+PIC2-ALL-LEAD-027,PIC Kegiatan,DIBUANG_RETIRE,Final_Decision = Retire
+OPDAP-ALL-ADMIN-002,Operator Dapodik,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+OPDAP-ALL-PD-002,Operator Dapodik,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Semesteran' -> kondisi='Baseline' frekuensi='Semesteran' (keyakinan=1.00, metode=frekuensi+cluster (n=9), perlu_review=tidak)"
+OPDAP-ALL-ADMIN-005,Operator Dapodik,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
+OPDAP-ALL-ADMIN-017,Operator Dapodik,KONDISI_DIREKONSTRUKSI_Z_TERTIMPA_FREKUENSI,"Z_asli='Insidental' AA_asli='Insidental' -> kondisi='Peak' frekuensi='Insidental' (keyakinan=0.93, metode=frekuensi+cluster (n=40), perlu_review=tidak)"
