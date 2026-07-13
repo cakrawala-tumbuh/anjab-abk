@@ -65,6 +65,31 @@ Pengisian Task Inventory dibagi menjadi **3 tahap** dengan status sesi: `DRAFT �
 - Task **partial** (sebagian pilih) ditampilkan di halaman review koordinator (`/task-inventory/tahap2/{sesi_id}`).
 - Partisipan mengisi detail di `/task-inventory/tahap3/{responden_id}`.
 
+## Backlog
+
+Pekerjaan yang **sudah direncanakan tapi belum dieksekusi** dicatat sebagai berkas Markdown di repo
+induk ini — bukan di sub-repo — karena banyak pekerjaan menyentuh dua atau tiga sub-repo sekaligus.
+
+- **[`BACKLOG.md`](BACKLOG.md)** — indeks: satu baris per item (ID, judul, repo, status, blocked-by).
+  Ini satu-satunya tempat melihat urutan & ketergantungan antar item.
+- **`backlog/<id>-<slug>.md`** — satu berkas per item, berisi rencana **detail dan siap dieksekusi**.
+- **[`backlog/TEMPLATE.md`](backlog/TEMPLATE.md)** — struktur wajib item baru.
+
+Aturan:
+
+1. Item backlog ditulis cukup lengkap sehingga agen pelaksana (mis. Sonnet) bisa mengeksekusinya
+   **tanpa menginterpretasi ulang** — sertakan keputusan yang sudah dikunci, fakta kode aktual
+   (`path:baris`, ditandai ✓), langkah konkret, kriteria penerimaan, skenario uji, dan definition of done.
+2. **Satu item = satu repo.** Pekerjaan lintas repo dipecah per repo dan diurutkan lewat kolom
+   *blocked by* (mis. backend dulu → MCP & web app menyusul setelah `openapi.json` berubah).
+3. Item yang sudah dieksekusi dipindahkan ke tabel "Selesai" di `BACKLOG.md`, berkasnya tetap
+   disimpan sebagai jejak keputusan.
+4. Saat berada di **plan mode** untuk pekerjaan anjab-abk, materialisasikan rencananya jadi item
+   backlog — jangan biarkan hanya jadi rencana sesaat di dalam percakapan.
+
+Berkas `rencana-*.md` / `plan-*.md` di akar repo adalah format **lama** (sebelum mekanisme ini ada).
+Jangan tambah yang baru; tulis item backlog.
+
 ## Development Guidelines
 
 - Commit message ditulis dalam **Bahasa Indonesia**.
