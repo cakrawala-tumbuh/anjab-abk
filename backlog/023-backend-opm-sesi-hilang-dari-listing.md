@@ -30,7 +30,7 @@ Ditemukan saat simulasi end-to-end SOP TI + OPM di produksi (`anjab-abk.cantum-y
 | 6 | Kode `anjab-abk-web-app/src/app/(auth)/opm/page.tsx:17-25` — `fetchSesi()` memanggil `GET /api/v1/opm/sesi` dengan `limit: 100` (bukan default kecil), tanpa filter status/jabatan apa pun; render tanpa filter client-side | ✓ — dicek Explore agent |
 | 7 | Kode `anjab-abk-backend/.../opm/services/sesi_sql.py:109-118` (`SqlOpmSesiService.list`) — **tidak ada `WHERE` sama sekali**, query `SELECT * FROM opm_sesi ORDER BY created_at DESC LIMIT :limit OFFSET :offset` murni | ✓ — dicek Explore agent |
 | 8 | Pre-check create (`sesi_sql.py:145-149`) & constraint DB (`models.py:595`, `jabatan_id` `unique=True`) — keduanya kunci ke kolom `jabatan_id` yang **sama persis** dengan yang dipakai listing; tidak ada divergensi kondisi WHERE yang terlihat dari kode | ✓ — dicek Explore agent |
-| 9 | `GET /openapi.json` produksi (`https://api.anjab-abk.cantum-ypii.com/openapi.json`) melaporkan `info.version = "0.26.0"`, padahal `CHANGELOG.md` di repo lokal sudah sampai `[0.33.0] - 2026-07-14` (Unreleased) — **tapi** fitur dari rilis setelah 0.26.0 (mis. auth guard sesi TI dari 0.32.0, pewarisan koordinator dari commit dekat 0.32.0) **terbukti aktif** di produksi selama simulasi TI hari ini | ✓ dicek via `curl openapi.json` + observasi perilaku langsung |
+| 9 | ~~`GET /openapi.json` produksi melaporkan `info.version = "0.26.0"`, padahal `CHANGELOG.md` repo sudah `[0.33.0]` — mencurigakan (deployment lag?)~~ **→ KELIRU, DIKOREKSI 2026-07-14.** `__version__` **di-hardcode** `"0.26.0"` di `src/anjab_abk_backend/__init__.py:3` **di HEAD sendiri** dan tak pernah di-bump. Produksi melaporkan `0.26.0` **bukan** karena tertinggal, tapi karena konstanta itu basi. Perbandingan `openapi.json` produksi vs HEAD: **identik (v0.33.1)** — produksi TIDAK tertinggal. **`info.version` tidak boleh dipakai menilai versi deploy;** pakai perilaku endpoint | ✓ `grep __version__` + banding `openapi.json` prod vs HEAD, 2026-07-14 |
 
 ## Kemungkinan penyebab (belum terverifikasi — perlu akses live)
 
@@ -38,13 +38,14 @@ Karena review kode statis di titik 6-8 **tidak menunjukkan cacat logika** (listi
 filter apa pun mengakses tabel yang sama persis dengan constraint create), penyebabnya
 kemungkinan besar **di luar apa yang bisa diverifikasi lewat pembacaan kode**:
 
-1. **Environment/deployment drift** — kemungkinan ada >1 instance backend atau >1 database
-   di belakang load balancer yang tidak sinkron (mis. blue-green tanpa DB bersama, atau
-   container lama belum di-redeploy untuk sebagian traffic). Fakta #9 (version string
-   `0.26.0` yang janggal, tapi fitur baru tetap aktif) **konsisten dengan** skenario
-   version-string yang salah/tidak ter-bump saat build image, ATAU dengan skenario lebih
-   serius: ada 2 instance backend yang berbeda versi & berbeda DB melayani request yang
-   berbeda (request listing kena instance A, request create kena instance B).
+1. ~~**Environment/deployment drift**~~ — **DILEMAHKAN 2026-07-14 (lihat koreksi fakta #9 di
+   bawah).** Dugaan ini bersandar pada version string `0.26.0` yang janggal. Ternyata
+   `__version__` **di-hardcode** `"0.26.0"` di `src/anjab_abk_backend/__init__.py:3` dan tidak
+   pernah di-bump — jadi `info.version` produksi **selalu** `0.26.0` berapa pun versi
+   sebenarnya, dan **bukan bukti apa pun** soal drift. Pemeriksaan `openapi.json` produksi
+   menunjukkan backend produksi **setara HEAD (v0.33.1)**. Skenario "2 instance beda versi &
+   beda DB" jadi jauh lebih lemah — **jangan jadikan hipotesis utama lagi**, meski belum
+   sepenuhnya gugur (topologi replica/DB belum diverifikasi langsung).
 2. **Row nyata di DB, tersembunyi dari listing karena alasan non-kode** (mis. row dibuat
    langsung via SQL manual/migrasi data seed di masa lalu dengan kolom yang membuatnya lolos
    dari `ORDER BY created_at` LIMIT 100 tapi entah kenapa — kurang mungkin karena listing
@@ -113,6 +114,26 @@ Kemungkinan hasil dan tindak lanjutnya:
 - [ ] `make test` hijau di repo terkait (bila perubahan kode diperlukan)
 - [ ] `CHANGELOG.md` diperbarui
 - [ ] Item dipindah ke tabel "Selesai" di `BACKLOG.md`
+
+## Update 2026-07-14 (sesi kedua) — bug dikonfirmasi masih terjadi, 2 jabatan baru
+
+Simulasi ulang SOP TI + OPM dijalankan lagi pada hari yang sama, sengaja dengan **jabatan &
+panel yang berbeda** dari percobaan pertama (Wali Kelas `jbt_59eb604e`, Guru Kelas SD
+`jbt_1af01170` — bukan Pembina OSIS/Guru Mapel SMP/Koordinator Pramuka), untuk memastikan bug
+409 bukan kebetulan terkait 3 jabatan spesifik sebelumnya.
+
+- `POST /api/v1/opm/sesi` untuk `jabatan_id=jbt_1af01170` (Guru Kelas SD — TI baru sukses penuh
+  sampai **Teranalisis** hari ini juga, jadi mustahil sudah punya OPM lama) → toast
+  `"Sesi OPM untuk jabatan 'jbt_1af01170' sudah ada."`
+- `POST /api/v1/opm/sesi` untuk `jabatan_id=jbt_59eb604e` (Wali Kelas) → 409 identik
+- `GET /opm` (listing) tetap hanya menampilkan **2 baris** yang sama seperti percobaan pertama
+  (`jbt_16548582`, `jbt_b2482c0a`) — kedua jabatan baru ini TIDAK PERNAH muncul
+- Total sekarang **5 jabatan berbeda** (3 dari percobaan pertama + 2 ini) mengalami 409 yang
+  sama, memperkuat kesimpulan bug **sistemik**, bukan terkait data lama jabatan tertentu
+
+**Status backlog TIDAK berubah** — root cause tetap belum terverifikasi (masih butuh akses
+produksi langsung sesuai "Langkah eksekusi" di atas), update ini hanya menambah bukti reproduksi.
+Detail lengkap sesi kedua: memori `ti-opm-test-2-2026-07-14`.
 
 ## Risiko & catatan
 
