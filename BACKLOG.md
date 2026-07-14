@@ -8,13 +8,16 @@ Detail tiap item ada di `backlog/<id>-<slug>.md`. Konvensi & cara pakai: lihat b
 
 ## Aktif
 
-| ID | Item | Repo | Status | Blocked by |
-|---|---|---|---|---|
+_(tidak ada item aktif saat ini)_
 
 ## Selesai
 
 | ID | Item | Repo | Status | Blocked by |
 |---|---|---|---|---|
+| [020](backlog/020-mcp-selaraskan-dcs-wcp-tambah-responden.md) | MCP: selaraskan `dcs_tambah_responden`/`wcp_tambah_responden` dengan `BulkAssignResult` | mcp | Selesai 2026-07-14 (ditemukan sebagai efek samping audit 018; anotasi tipe `-> dict` + docstring `{created, skipped}` + alasan skip benar untuk 2 tool; `make test` hijau 87 test; belum di-commit) | 018 |
+| [019](backlog/019-web-app-assign-responden-dcs-wcp-tampilkan-skipped.md) | Web app: tampilkan responden yang di-skip pada assign DCS & WCP | web-app | Selesai 2026-07-14 (panel ringkasan `created`/`skipped` ditiru persis dari `opm/assign-responden-banyak.tsx`, reuse `formatAlasanSkip`, checkbox skip tetap tercentang; `schema.ts` diregenerasi dari `openapi.json` 018; `make test` hijau 182 test, `npm run build` sukses; belum di-commit) | 018 |
+| [018](backlog/018-backend-assign-responden-dcs-wcp-skipped.md) | Backend: assign responden DCS & WCP kembalikan `BulkAssignResult` (dengan `skipped[]`) | backend | Selesai 2026-07-14 (service `responden_create` DCS & WCP diseragamkan dengan pola bulk OPM — idempoten, skip alih-alih menelan; `response_model=BulkAssignResult[...]`; `openapi.json` diregenerasi, breaking change; `make test` hijau 527 test; belum di-commit) | — |
+| [017](backlog/017-web-app-notifikasi-simpan-data.md) | Web app: notifikasi sukses/gagal di setiap penyimpanan data (pasang `sonner`; ~55 call site) + perbaikan 6 bug notifikasi-bohong | web-app | Selesai 2026-07-14 (`src/lib/notify.ts` terpusat; ~55 call site di 49 berkas dilengkapi `notifySukses`/`notifyGagal`; 5 bug notifikasi-bohong + 6 `alert()` diperbaiki; jaring pengaman grep nol hasil; `make test` hijau 174 test, `npm run build` sukses; belum di-commit) | — |
 | [016](backlog/016-web-app-item-editor-dcs-wcp-tidak-refresh.md) | Web app: editor item DCS & WCP tidak mereload data setelah simpan (perubahan `urutan` tak terlihat) | web-app | Selesai 2026-07-13 (cermin `useState` `rows` dibuang di kedua editor, tabel dirender langsung dari prop `items`, `router.refresh()` dipanggil setelah PATCH sukses; `hapus-penugasan.tsx` diseragamkan; 2 test baru `dcs-item-editor.test.tsx`/`wcp-item-editor.test.tsx`; `make test` hijau 145 test, `npm run build` sukses; belum di-commit) | — |
 | [012](backlog/012-web-app-title-halaman-terduplikasi.md) | Web app: title halaman terduplikasi "— ANJAB-ABK — ANJAB-ABK" di 30 halaman | web-app | Selesai 2026-07-13 (akhiran `" — ANJAB-ABK"` dihapus dari 30 string title manual di grup `(auth)`; `master-data/*` & root layout tidak disentuh; `make test` hijau 137 test, `npm run build` sukses; belum di-commit) | — |
 | [011](backlog/011-web-app-counter-belum-diputuskan-tahap2-tidak-reaktif.md) | Web app: counter "Belum diputuskan" di header Tahap 2 tidak reaktif saat klik Ya/Tidak | web-app | Selesai 2026-07-13 (counter dipindah ke `review-form.tsx`, memakai state client `belumDiputuskan` sebagai satu-satunya sumber kebenaran; span statis di `page.tsx` dihapus; 4 test baru ditambahkan di `review-form.test.tsx`; `make test` hijau 137 test, `npm run build` sukses; belum di-commit) | — |
@@ -31,6 +34,28 @@ Detail tiap item ada di `backlog/<id>-<slug>.md`. Konvensi & cara pakai: lihat b
 | [002](backlog/002-mcp-selaraskan-tool-dcs-wcp.md) | MCP: selaraskan tool DCS & WCP dengan model tanpa sesi | mcp | Selesai (commit `63527a8`, di luar sesi ini) | — |
 | [003](backlog/003-web-app-hapus-ui-sesi-dcs-wcp.md) | Web app: hapus UI sesi DCS & WCP, tambah halaman hasil agregat | web-app | Selesai (commit `13ac956`, di luar sesi ini) | — |
 | [007](backlog/007-web-app-bulk-penugasan-alat-ukur.md) | Web app: UI penugasan massal (bulk) TS/TI/OPM, berdampingan dengan form single | web-app | Selesai (commit `9a2375d`, di luar sesi ini) | — |
+
+---
+
+## Konteks lintas-item: asal item 017–020 (notifikasi + skip DCS/WCP)
+
+Item 017 (audit notifikasi ~55 call site web app) dan 018 (backend `BulkAssignResult` DCS/WCP)
+independen satu sama lain dan dieksekusi paralel 2026-07-14. Item 019 menyusul keduanya (butuh skema
+018 + helper `notify.ts` dari 017, dan menyentuh 2 file yang sama dengan langkah terakhir 017 —
+`dcs/assign-responden.tsx` & `wcp/assign-responden.tsx` — sehingga sengaja dijalankan sekuensial
+setelah 017 selesai, bukan paralel).
+
+**020 lahir sebagai temuan sampingan saat mengeksekusi 018**: agen pelaksana 018 mengaudit
+`anjab-abk-mcp` (sesuai instruksi "satu item = satu repo" di file backlog-nya) dan menemukan
+`dcs_tambah_responden`/`wcp_tambah_responden` masih bertipe kembali `list` dengan docstring yang
+menjanjikan "daftar responden" — kontrak itu jadi stale begitu 018 mengubah response backend menjadi
+objek `{created, skipped}`. Perbaikannya kecil (anotasi tipe + docstring + 2 test) sehingga langsung
+dieksekusi di sesi yang sama alih-alih ditinggalkan sebagai item "Aktif" terpisah.
+
+**Belum di-commit** — keempat item mengubah tiga repo berbeda (`anjab-abk-backend`,
+`anjab-abk-web-app`, `anjab-abk-mcp`). 018 adalah breaking change; 018+019 harus dirilis bersama
+(lihat catatan risiko di masing-masing file), dan 020 idealnya ikut rilis yang sama karena
+mendokumentasikan kontrak yang sama.
 
 ---
 
