@@ -1,7 +1,14 @@
 # Backlog 023 — OPM: sesi "sudah ada" (409) untuk jabatan yang tidak muncul di listing `/opm`
 
-> **Repo:** `anjab-abk-backend` (kemungkinan besar; butuh investigasi produksi sebelum eksekusi)
-> **Status:** Menunggu investigasi produksi — BUKAN siap dieksekusi (lihat "Langkah eksekusi")
+> **Repo:** `anjab-abk-backend`
+> **Status:** **SELESAI DI KODE 2026-07-14 — menunggu deploy + verifikasi produksi.**
+> Lihat "Hasil eksekusi" di bagian paling bawah. `make test` hijau (625 test). **Belum di-commit.**
+>
+> **Status lama (arsip):** SIAP DIEKSEKUSI — root cause ditemukan & dibuktikan 2026-07-14 (sesi ketiga).
+> Pesan `409 "sesi sudah ada"` adalah **pesan palsu**: yang sebenarnya terjadi adalah
+> `ForeignKeyViolation` saat flush, yang ditelan `_flush_checked()` dan dilaporkan sebagai
+> konflik duplikat. Lihat "Root cause (2026-07-14, terbukti)". **BUKAN** masalah data hantu,
+> **BUKAN** deployment drift.
 > **Blocked by:** —
 > **Skill yang dipakai:** `backend-skill`, `automated-test-skill`
 > **Jangan commit tanpa instruksi eksplisit user.**
@@ -155,3 +162,183 @@ Detail lengkap sesi kedua: memori `ti-opm-test-2-2026-07-14`.
   langkah pertama adalah investigasi manusia dengan akses produksi, bukan penulisan kode oleh
   agen. Sonnet yang mengambil item ini harus berhenti di Langkah 1-2 dan melapor balik hasil
   temuan sebelum menulis kode apa pun.
+
+---
+
+## Root cause (2026-07-14, sesi ketiga — TERBUKTI, bukan hipotesis)
+
+Ditemukan saat simulasi ulang SOP TI + OPM via Playwright di produksi. **Tidak ada sesi OPM
+hantu.** Tabel `opm_sesi` benar-benar kosong; pesan 409 itu bohong.
+
+### Bukti empiris
+
+| # | Fakta | Verifikasi |
+|---|---|---|
+| R1 | SELURUH sesi OPM dihapus lebih dulu (2 baris lama, `DELETE ...?paksa=true` → 204). `GET /api/v1/opm/sesi` → **0 item**; halaman `/opm` → "Belum ada Analisis Jabatan OPM" | ✓ |
+| R2 | Dengan tabel KOSONG, `POST /opm/sesi` utk `jbt_0e87bc6b` (Koordinator Pramuka) → 409 "Sesi OPM untuk jabatan 'jbt_0e87bc6b' sudah ada." | ✓ via UI |
+| R3 | Dengan tabel MASIH KOSONG, `POST /opm/sesi` utk `jbt_67d83915` (Pembina OSIS) → 409 identik | ✓ via UI |
+| R4 | ⇒ Dua jabatan berbeda, nol baris di tabel, keduanya "sudah ada" ⇒ **pre-check duplikat mustahil yang memicu**; 409 pasti datang dari `_flush_checked()` | ✓ deduksi tertutup |
+
+### Mekanisme (kode aktual)
+
+`src/anjab_abk_backend/opm/services/sesi_sql.py`:
+
+1. Baris **145-149** — pre-check duplikat: `select(OpmSesiModel.id).where(jabatan_id == ...)`.
+   Membaca **tabel yang sama** dengan `list()` (baris 109-115). Karena `list()` mengembalikan
+   0 baris, pre-check ini **tidak mungkin** yang melempar. ✓
+2. Baris **184** — `self._s.add(rec)` (parent `OpmSesiModel`) — **tanpa `flush()`**.
+3. Baris **230-241** — `self._s.add(OpmRespondenModel(..., sesi_id=rec.id, ...))` untuk tiap
+   anggota SME panel. `OpmRespondenModel.sesi_id` adalah **FK telanjang tanpa `relationship()`**
+   balik ke `OpmSesiModel` (beda dari `rec.task_links.append(...)` di baris 211 yang MEMANG
+   relationship, sehingga urutannya aman).
+4. Baris **243** — `self._flush_checked(on_conflict=f"Sesi OPM untuk jabatan '...' sudah ada.")`.
+5. Baris **101-107** — `_flush_checked` menangkap **`IntegrityError` apa pun** dan menerjemahkannya
+   menjadi `ConflictError(on_conflict)`. `ForeignKeyViolation` adalah subclass `IntegrityError`.
+
+⇒ Saat flush, SQLAlchemy unit-of-work **tidak menjamin** INSERT `opm_sesi` mendahului INSERT
+`opm_responden` (urutan ditentukan `relationship()` ORM, bukan kolom `ForeignKey` mentah) →
+PostgreSQL menolak dengan `ForeignKeyViolation` → ditelan → dilaporkan sebagai "sudah ada".
+
+### Ini persis gotcha yang sudah didokumentasikan sendiri
+
+`anjab-abk-backend/CLAUDE.md`, entri Revisi Desain **[2026-07-13]**, menutup bug identik di
+`SqlTiSesiService.create()` dengan menambahkan `self._s.flush()` setelah `add(rec)`, lalu menulis:
+
+> **OPM's `SqlOpmSesiService.create()` punya pola bare-FK yang identik** untuk `OpmRespondenModel`
+> (auto-responden dari panel) — berpotensi bug yang sama, TAPI di luar lingkup revisi ini untuk
+> diperbaiki (kebetulan belum pernah termanifestasi di test yang ada); catat sebagai risiko bila
+> disentuh di masa depan.
+
+Risiko itu **sudah termanifestasi di produksi**. Catatan yang sama juga menjelaskan kenapa bug ini
+**selalu lolos unit test**: harness test memakai `Session(join_transaction_mode="create_savepoint")`
+yang urutan flush-nya berbeda dari `get_sessionmaker()` produksi.
+
+## Perbaikan (terkunci)
+
+### Langkah A — flush parent sebelum menambah anak (WAJIB)
+
+`opm/services/sesi_sql.py`, tepat setelah baris 184 (`self._s.add(rec)`):
+
+```python
+self._s.add(rec)
+self._s.flush()  # WAJIB: OpmRespondenModel.sesi_id adalah FK telanjang tanpa relationship()
+                 # → urutan INSERT parent-dulu tidak dijamin unit-of-work. Lihat CLAUDE.md
+                 # (Gotcha "Membuat parent + child ORM baru dalam satu create()").
+```
+
+Persis pola yang sudah dipakai `SqlTiSesiService.create()`.
+
+### Langkah B — `_flush_checked` berhenti berbohong (WAJIB)
+
+Baris 101-107 saat ini memetakan **semua** `IntegrityError` → `ConflictError("... sudah ada")`.
+Itulah yang menyembunyikan bug ini selama 2 sesi pengujian. Persempit ke pelanggaran UNIQUE saja;
+IntegrityError lain harus naik apa adanya (500 + stack trace) agar tidak menyamar jadi konflik:
+
+```python
+from psycopg.errors import UniqueViolation
+
+def _flush_checked(self, *, on_conflict: str) -> None:
+    """Flush dalam SAVEPOINT; petakan HANYA UniqueViolation → 409."""
+    try:
+        with self._s.begin_nested():
+            self._s.flush()
+    except IntegrityError as exc:
+        if isinstance(getattr(exc, "orig", None), UniqueViolation):
+            raise ConflictError(on_conflict) from exc
+        raise  # FK violation dll. JANGAN disamarkan sebagai konflik
+```
+
+### Langkah C — test regresi yang benar-benar menangkap ini
+
+Unit test biasa **tidak akan** menangkapnya (savepoint harness). Wajib test yang memverifikasi
+urutan INSERT secara eksplisit, mis. menegaskan `rec.id` sudah ada di DB (`SELECT`) sebelum
+responden ditambahkan, ATAU test integrasi yang memakai sessionmaker produksi.
+
+## Kriteria penerimaan (menggantikan yang di atas)
+
+- [ ] `POST /opm/sesi` untuk jabatan ber-SME-panel + TI beku → **201**, sesi muncul di `GET /opm/sesi`.
+- [ ] Responden otomatis terisi dari seluruh anggota SME panel.
+- [ ] Membuat sesi OPM **kedua** untuk jabatan yang sama → tetap **409 "sudah ada"** (yang ini benar).
+- [ ] `make test` hijau.
+- [ ] Diverifikasi di produksi lewat UI, bukan hanya unit test.
+
+## Catatan
+
+Selama bug ini hidup, **seluruh alat ukur OPM tidak dapat dipakai sama sekali** di produksi —
+bukan sekadar terganggu. Ini blocker, prioritas tertinggi di antara temuan 2026-07-14.
+
+---
+
+## Hasil eksekusi (2026-07-14)
+
+Perbaikan dieksekusi persis sesuai Langkah A + B + C yang terkunci di atas. Seluruhnya di
+`anjab-abk-backend`, **belum di-commit**.
+
+### Yang diubah
+
+| Berkas | Perubahan |
+|---|---|
+| `opm/services/sesi_sql.py` | **Langkah A**: `flush()` parent setelah `add(rec)`, sebelum auto-responden. **Langkah B**: `_flush_checked()` hanya memetakan `UniqueViolation` → 409; `IntegrityError` lain naik apa adanya |
+| `tests/test_opm_sesi.py` | **Langkah C**: 2 test regresi baru (lihat di bawah) |
+| `CHANGELOG.md` | Entri `[Unreleased] → Diperbaiki` + catatan pengembang soal `autoflush` |
+| `CLAUDE.md` | Entri Revisi Desain `[2026-07-14] OPM` + **koreksi Gotcha** |
+
+**Satu penyimpangan sadar dari Langkah A:** flush parent dipanggil lewat
+`self._flush_checked(on_conflict=konflik)`, **bukan** `self._s.flush()` telanjang seperti
+di TI. Alasan: unique constraint `jabatan_id` adalah satu-satunya backstop untuk **race dua
+create bersamaan** (pre-check langkah 4 lolos di kedua request). Dengan `flush()` telanjang,
+race itu jadi 500, bukan 409 — regresi diam-diam. Lewat `_flush_checked`, perilaku 409-nya
+tetap, dan sekarang **jujur** (hanya duplikat asli).
+
+### Root cause tambahan — koreksi atas dokumen ini sendiri
+
+Klaim di "Langkah C" di atas (dan di `CLAUDE.md` `[2026-07-13]`) bahwa bug ini lolos unit test
+**karena `join_transaction_mode="create_savepoint"`** ternyata **KELIRU**. Penyebab sebenarnya
+adalah **`autoflush`**:
+
+- Produksi: `sessionmaker(autoflush=False)` (`db.py:119`) ✓
+- Harness test: `Session(...)` → `autoflush=True` (default) (`tests/conftest.py:89`) ✓
+
+Di test, autoflush diam-diam mem-flush baris sesi begitu `create()` menjalankan SELECT snapshot
+task — parent kebetulan sudah ada saat anak di-INSERT, jadi urutan yang salah **tidak pernah
+terlihat**. Ini dibuktikan, bukan diduga: percobaan pertama memakai test spy yang memverifikasi
+urutan `add`/`flush` **tetap lolos** meski perbaikan dicabut.
+
+### Test regresi (Langkah C) — diverifikasi tidak vakum
+
+1. **`test_create_sesi_tanpa_autoflush_seperti_produksi`** — menjalankan `create()` di dalam
+   `db_session.no_autoflush` untuk **meniru sessionmaker produksi**. Dengan perbaikan dicabut,
+   test ini gagal dengan **persis bug produksinya**:
+   `ForeignKeyViolation` → `ConflictError: Sesi OPM untuk jabatan 'jbt_…' sudah ada.`
+   Seluruh 35 test OPM lain **tetap hijau** saat itu — bukti langsung mereka buta terhadap
+   kelas bug ini.
+2. **`test_flush_checked_tidak_menyamarkan_fk_violation`** — `_flush_checked` harus melempar
+   `IntegrityError` apa adanya untuk pelanggaran FK, bukan `ConflictError`. Juga diverifikasi
+   gagal bila Langkah B dicabut.
+
+`make test` hijau: **625 test** (dari 623), lint bersih. `openapi.json` tidak berubah (tidak ada
+perubahan kontrak — 409 sudah terdokumentasi).
+
+### Kriteria penerimaan — status
+
+- [x] `POST /opm/sesi` untuk jabatan ber-SME-panel + TI beku → **201**, sesi muncul di listing
+- [x] Responden otomatis terisi dari seluruh anggota SME panel
+- [x] Sesi OPM **kedua** untuk jabatan yang sama → tetap **409 "sudah ada"** (yang ini benar)
+- [x] `make test` hijau
+- [ ] **Diverifikasi di produksi lewat UI** — **BELUM.** Butuh commit → rilis → deploy dulu.
+
+### Langkah selanjutnya
+
+1. Commit + rilis + deploy backend (**butuh instruksi eksplisit user**).
+2. Jalankan tes OPM end-to-end sesuai skrip 5 langkah di `BACKLOG.md`
+   ("Konteks lintas-item: simulasi SOP TI + OPM #3" → "Langkah tes OPM begitu 023 ter-deploy") —
+   2 sesi TI sudah siap: Koordinator Pramuka (`tises_c456dffb`) & Pembina OSIS (`tises_cdebca82`).
+3. Sekalian verifikasi **item 034** (kolom "Jabatan" harus nama, bukan `jbt_…`).
+
+### Utang teknis yang tersingkap (bukan bagian item ini)
+
+- **`_flush_checked` diduplikasi di 11 service** (`grep -rn "_flush_checked" src/`), masing-masing
+  punya salinan sendiri yang memetakan **semua** `IntegrityError` → 409. Hanya salinan OPM yang
+  diperbaiki di sini. **10 sisanya masih bisa berbohong dengan cara yang sama** — mis.
+  `partisipan_sql.py`, `sekolah_sql.py`, `jabatan_sql.py`. Kandidat item backlog baru:
+  angkat `_flush_checked` jadi satu helper bersama yang hanya memetakan `UniqueViolation`.

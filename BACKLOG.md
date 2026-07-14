@@ -10,15 +10,19 @@ Detail tiap item ada di `backlog/<id>-<slug>.md`. Konvensi & cara pakai: lihat b
 
 | ID | Item | Repo | Status | Blocked by |
 |---|---|---|---|---|
-| [023](backlog/023-backend-opm-sesi-hilang-dari-listing.md) | Backend: OPM 409 "sesi sudah ada" utk jabatan yang tidak muncul di listing `/opm` (sistemik, blokir seluruh alur OPM) — dikonfirmasi ulang 2026-07-14 dgn 2 jabatan baru | backend | **Menunggu investigasi produksi** (bukan siap dieksekusi). ⚠️ Fakta #9 (version `0.26.0` = deploy lag) **DIKOREKSI 2026-07-14: KELIRU** — `__version__` di-hardcode di HEAD; produksi sebenarnya setara HEAD. Hipotesis "deployment drift" dilemahkan, jangan jadikan utama lagi | — |
+| [024](backlog/024-backend-ti-tahap3-task-kosong.md) | TI: sesi dgn task ber-`detil_tugas` NULL → **500** di `task-terpilih`/`hasil`/`analisis`; halaman detail crash total & sesi tak bisa dihapus lewat UI | backend | **SIAP DIEKSEKUSI — root cause TERBUKTI 2026-07-14** via API ber-token: `GET .../sesi/tises_434a8864/task-terpilih` → **500**, sedangkan `/sesi/{id}`, `/responden`, `/tahap2` → 200. Sebabnya `TiCatalogRead.detil_tugas` **nullable** tapi `TiTaskTerpilihRead.detil_tugas: str` **wajib**; `analisis.py:39` (& `:103`) hanya mem-fallback `""` saat **katalog hilang**, bukan saat `detil_tugas is None` → Pydantic `ValidationError` → 500. Data terdampak: **2 baris** (`WK-ALL-PD-001` Wali Kelas + 1 di Wakasek Kurikulum). ⚠️ Investigasi lama menyatakan hipotesis (b) "GUGUR" — **kelirunya di cara menguji**: kasus nyatanya *katalog ADA dgn `detil_tugas` NULL*, bukan *katalog hilang*. Fix: `(cat.detil_tugas or "") if cat else ""` di 2 tempat | — |
 | [032](backlog/032-web-app-toapierror-membuang-pesan-backend.md) | Web app: ±20 berkas jalur baca masih `toApiError(null, …)` — **melempar** (tidak menelan) tapi membuang pesan & status HTTP backend; + pengecualian 026 di Tahap 2 ternyata menelan **semua** status, bukan hanya 404 | web-app | Siap dieksekusi | — |
-| [025](backlog/025-backend-endpoint-baca-tanpa-auth.md) | **KEAMANAN:** 32 endpoint GET tanpa guard auth — PII 103 pegawai (`/partisipan`) & hasil DCS/WCP per individu terbuka publik tanpa token | backend | **Code-complete 2026-07-14, MENUNGGU DEPLOY** — kebocoran masih hidup di produksi. Kode: `READ_GUARDS` terpusat di `dependencies.py`, 32 GET + **9 `POST .../search`** (di luar cakupan awal: `/partisipan/search` membocorkan PII yang sama) diguard; `hasil-responden` DCS/WCP pakai `authorize_responden_access()` yg sudah ada (admin ATAU pemilik); test parametrisasi dari skema OpenAPI (bukan daftar manual) + penjaga anti-lolos-hampa; ~40 test lama pindah dari `anon_client`→`client`; `make test` hijau **621 test**; `openapi.json` diregenerasi (gitignored — 65/68 GET bersecurity, sisanya `/health`,`/ready`,`/version`); skema data TIDAK berubah → web-app & MCP tak perlu regen tipe. **Belum "Selesai" karena kriteria penerimaannya menuntut bukti ter-deploy (`curl` tanpa token → 401).** Belum di-commit | — |
-| [024](backlog/024-backend-ti-tahap3-task-kosong.md) | TI: Tahap 3 menampilkan 0 task meski Task Terpilih sudah dibekukan (sesi Wali Kelas) | **belum tentu backend** | **Diinvestigasi 2026-07-14 — kedua hipotesis GUGUR dgn bukti kode, nol kode diubah.** (b) INNER JOIN `detil_tugas_id: null`: gugur — `catalog.py:148` & `analisis.py:32-53` justru tetap mengemit baris meski katalog hilang. (a) guard 403 partisipan: gugur — `task-terpilih` & `GET /sesi/{id}` pakai guard IDENTIK, dan halaman terbukti berhasil merender sesi ⇒ guard lolos; test `test_taskinv.py:1715` sudah membuktikan peserta dpt 200. Juga tereliminasi: TAHAP3-tanpa-task-beku (mustahil, `freeze` tolak `kodes` kosong), 422/429/500-selektif. ⇒ **salah satu premis observasi pasti keliru**; kandidat terkuat: `responden.sesi_id` ≠ `tises_434a8864` (baris warisan auto-enroll lama, backlog 013). **Menunggu deploy 026** agar error sesungguhnya terlihat | deploy 026 |
+| [033](backlog/033-web-app-tahap3-isian-standar-durasi.md) | TI Tahap 3: "Setuju dengan isian standar" **bocor** (field `Durasi/kali` tetap bisa diedit) & nilai standar durasi **tidak pernah diterapkan** (selalu 60 menit, padahal petunjuknya "<15 menit"/"4-8 jam") → `durasi_per_kali_mean` bias diam-diam | web-app (+ keputusan data backend) | Langkah 1 (tutup kebocoran `disabled`) siap dieksekusi; Langkah 2 (semantik durasi standar: `std_durasi_per_kali` teks bebas vs field numerik menit) **butuh keputusan produk** | — |
+| [035](backlog/035-web-app-403-500-tampil-sebagai-crash.md) | Web app: 403 & 500 dari backend tampil sbg crash "Server Components render", bukan pesan. Non-anggota panel buka Tahap 2 → crash (otorisasi BENAR, pesannya salah); sesi ber-500 → **tombol "Hapus paksa" ikut hilang** ⇒ admin terkunci dari UI-nya sendiri | web-app | Siap dieksekusi. Mode hanya-baca anggota panel terverifikasi **sudah bekerja** (jangan diregresikan) | — |
+| [034](backlog/034-web-app-opm-jabatan-id-mentah.md) | OPM: kolom "Jabatan" di `/opm` & `/opm/{id}` menampilkan **ID mentah** (`jbt_16548582`), bukan nama jabatan — kelas bug yang sama dgn 022 (DCS/WCP), OPM terlewat | backend / web-app (tentukan di Langkah 1) | Siap dieksekusi. Verifikasi e2e menunggu 023 (sesi OPM belum bisa dibuat) | — (verifikasi: 023) |
+| [036](backlog/036-web-app-manifest-pwa-gagal-parse.md) | Web app: `manifest.webmanifest` ditolak browser (`Syntax error`) di **tiap** halaman → app **tidak installable sbg PWA**, padahal berkasnya JSON valid (200, tanpa BOM) via `curl` ⇒ diduga negosiasi RSC/`Vary: rsc` atau middleware. Backlog 010 pernah menyentuh area ini ⇒ mungkin regresi | web-app | Siap dieksekusi (Langkah 1 = intersep respons yang benar-benar diterima browser; jangan menebak) | — |
 
 ## Selesai
 
 | ID | Item | Repo | Status | Blocked by |
 |---|---|---|---|---|
+| [023](backlog/023-backend-opm-sesi-hilang-dari-listing.md) | **BLOKIR TOTAL OPM:** create sesi OPM selalu 409 "sesi sudah ada" — **pesannya palsu** | backend | **Selesai di kode 2026-07-14 — ⚠️ menunggu deploy + verifikasi produksi (belum di-commit).** Fix persis rencana: (a) `flush()` parent setelah `add(rec)` sebelum auto-responden ber-FK-telanjang; (b) `_flush_checked` kini **hanya** memetakan `UniqueViolation` → 409, `IntegrityError` lain naik apa adanya (500) — pemetaan buta itulah yg menyamarkan `ForeignKeyViolation` jadi "sudah ada" & menyesatkan 2 sesi investigasi. Penyimpangan sadar: flush parent lewat `_flush_checked` (bukan `flush()` telanjang spt TI) agar unique constraint tetap jadi backstop 409 utk **race dua create bersamaan**. **Root cause tambahan — koreksi dokumen sendiri:** bug ini lolos unit test **BUKAN** krn `create_savepoint` (klaim di `CLAUDE.md` [2026-07-13] & backlog ini **KELIRU**), tapi krn **`autoflush`**: prod `sessionmaker(autoflush=False)` vs harness test `autoflush=True` (default) → autoflush diam-diam mem-flush parent saat SELECT snapshot task. Test regresi memakai `db_session.no_autoflush` utk **meniru produksi**; **diverifikasi tidak vakum** — dgn fix dicabut ia gagal dgn bug produksi persis (`ForeignKeyViolation` → `ConflictError "… sudah ada"`) sementara 35 test OPM lain tetap hijau. `make test` hijau **625 test**; `openapi.json` tidak berubah. **Utang tersingkap:** `_flush_checked` diduplikasi di **11 service**, 10 sisanya masih bisa berbohong dgn cara sama | — |
+| [025](backlog/025-backend-endpoint-baca-tanpa-auth.md) | **KEAMANAN:** 32 endpoint GET tanpa guard auth — PII 103 pegawai (`/partisipan`) & hasil DCS/WCP per individu terbuka publik tanpa token | backend | **Selesai — TER-DEPLOY & TERVERIFIKASI DI PRODUKSI 2026-07-14.** Kriteria penerimaannya (bukti `curl` tanpa token → 401) **terpenuhi**: `GET /api/v1/partisipan` → **401** `{"error":"unauthorized","message":"Token tidak ada."}`; idem `/task-inventory/sesi/{id}`, `/task-inventory/sesi/{id}/task-terpilih`, `/dcs/instrumen`. Backend produksi kini `version 0.34.0`. Kebocoran PII **sudah tertutup** — status sebelumnya ("code-complete, menunggu deploy") tidak berlaku lagi | — |
 | [031](backlog/031-web-app-telan-senyap-data-pendukung.md) | Web app: `?? []`/`?? null` tersisa di jalur baca **data pendukung** (dropdown jabatan/sekolah/partisipan, label) — di luar cakupan 026; tampil sbg dropdown kosong/label ID mentah tanpa pesan error begitu guard 025 aktif | web-app | Selesai 2026-07-14 — inventarisasi ulang: **29 kemunculan** (bukan ~30), diklasifikasi per kasus, **bukan** dipukul rata. (1) Pendukung→formulir/dropdown (**20 kemunculan, 12 berkas**) → **melempar** `apiErrorDari` — bukan kosmetik: menyimpan form edit dgn pilihan yg hilang **menghapus relasi yg sudah ada** (`jabatan_ids` tugas pokok, jabatan tambahan partisipan). (2) Pendukung→pelabelan saja (`/time-study`, `/partisipan`, `/master-data/sme-panel`) → halaman **tetap dirender** + penanda gagal terlihat: `GagalMuatSebagian` + helper `src/lib/api/pendukung.ts` (`pendukungList`/`bagianGagal`). (3) `data.items ?? []` **setelah** guard throw → default field opsional envelope, bukan penelanan → dibiarkan. 2 pengecualian 404 (026) tak diregresikan. **Grep sekali-pakai ditinggalkan** → jaring pengaman otomatis `src/test/jaring-pengaman-jalur-baca.test.ts` memindai **semua ejaan** sekaligus (`.data ?? []`, `.data?.X ?? …`, `.catch(() => set…)`, klien `api` telanjang) — pola ini kembali 3× justru krn tiap pemberantasan mengejar **satu** ejaan; jaring langsung menangkap **ejaan ke-4** yg lolos dari audit manual 031 sendiri: `?? ([] as SekolahRead[])` di `partisipan/tambah/page.tsx`. `make test` hijau **232 test** (38 file), `npm run build` sukses. Utang: ±20 berkas baca lain masih `toApiError(null, …)` — **melempar** (tak menelan) jadi di luar cakupan, tapi membuang pesan backend & status HTTP. Belum di-commit | — |
 | [030](backlog/030-web-app-form-max-responden-sadar-panel.md) | Web app: form "Mulai Analisis Jabatan" (TI & OPM) tidak sadar jumlah anggota panel → admin menabrak 422 `max_responden` tanpa petunjuk | web-app | Selesai 2026-07-14 — `src/lib/sme-panel.ts` (`petaJumlahAnggotaPanel`, membedakan `null`=jabatan belum dipilih dari `0`=jabatan tanpa panel) + `src/components/sme-panel-info.tsx` dipakai identik di TI & OPM; form fetch `/sme-panel`, tampilkan "SME panel: N anggota", **prefill** `max_responden`=N (bukan validasi klien yg menolak submit); default 10 sengaja TIDAK dinaikkan. Bonus (invariant 026): `opm/buat/page.tsx` ketiga fetch-nya dulu `?? []` → kegagalan API tampil sbg dropdown jabatan kosong & "Belum ada Analisis Jabatan TI yang dibekukan" (**informasi palsu**) → kini melempar `apiErrorDari`. Pesan 422 backend sampai utuh + `X-Request-ID` (diuji, bukan diasumsikan). IK `docs-usage/ik/{opm,task-inventory}.md` diperbarui. 13 test baru; `make test` hijau **220 test**, `npm run build` sukses. ⚠️ Efek samping sah: panel < `min_responden` (mis. panel 2, min 3) kini memicu validasi "Maks harus ≥ min" **sejak jabatan dipilih** — konflik konfigurasi nyata yg dulu tersembunyi; admin turunkan `min_responden`. Belum di-commit | — |
 | [027](backlog/027-web-app-logout-tidak-akhiri-sesi-sso.md) | Web app: "Keluar" tidak mengakhiri sesi SSO Authentik — pengguna berikutnya auto-login sbg pengguna sebelumnya | — (config Authentik) | Selesai 2026-07-14 — **root cause BUKAN di kode; nol baris diubah.** Hipotesis URL `end-session` salah & `idToken` tak ter-persist **dua-duanya GUGUR** (URL identik dgn metadata OIDC; `id_token_hint` terbukti terkirim). Penyebab asli: provider Authentik `anjab-abk-web` punya 2 `redirect_uris` yang **keduanya bertipe `authorization`**, nol bertipe `logout` → `post_logout_redirect_uri` tak pernah sah, RP-initiated logout tak pernah tuntas. Perbaikan: tambah 2 URI bertipe `logout` (varian dgn & tanpa `/` akhir, krn `matching_mode: strict` & `AUTH_URL` prod tak terbaca) — **aditif**, URI lama utuh. **Diverifikasi di browser produksi**: Keluar → flow invalidasi tuntas → `/dashboard` melempar ke `/login`, bukan auto-login. Tak ada `CHANGELOG`/test (nol kode) — **perbaikan ini rapuh: hidup di Authentik, bukan repo** (lihat Risiko di file) | — |
@@ -273,3 +277,61 @@ Yang **tidak** boleh ikut hilang saat sesi dibuang (pelajaran dari Time Study, y
 submit + agregasi saat sesinya dihapus): DCS/WCP tetap butuh (a) `min_responden` sebagai cutoff
 analisis, dan (b) momen **penutupan** yang membekukan kohort sebelum Cronbach alpha dihitung. Keduanya
 pindah ke satu baris konfigurasi singleton per instrumen, bukan hilang.
+
+---
+
+## Konteks lintas-item: simulasi SOP TI + OPM #3 (2026-07-14) — **status resume**
+
+Item **033–036** lahir, dan root cause **023** & **024** akhirnya terbukti, dari **simulasi
+end-to-end SOP Persiapan + Pelaksanaan TI & OPM** via Playwright di produksi YPII
+(`anjab-abk.cantum-ypii.com`, backend v0.34.0), dipandu `docs-usage/sop/{persiapan,pelaksanaan}-{task-inventory,opm}.md`.
+Data jawaban lama (7 sesi TI + 2 sesi OPM) dihapus lebih dulu atas instruksi user.
+
+### Yang SUDAH selesai — jangan dibangun ulang
+
+**Task Inventory: lolos penuh di 2 panel** (DRAFT → TAHAP1 → TAHAP2 → TAHAP3 → CLOSED → Teranalisis),
+3 responden per panel mengisi acak, termasuk review koordinator & agregasi CalHR:
+
+| Sesi TI | ID | Jabatan | Status | Task beku | Koordinator | Responden (3) |
+|---|---|---|---|---|---|---|
+| 1 | `tises_c456dffb` | Koordinator Pramuka | **Teranalisis** | 7 (1 unanimous + 6 disetujui) | Irwan Faisal | Irwan Faisal, Timotius Iwan Rudiawan, Hendrika Shelin Pratiwi |
+| 2 | `tises_cdebca82` | Pembina OSIS | **Teranalisis** | 3 (0 unanimous + 3 disetujui) | Theresia Avila Yuanita W | Theresia Avila Yuanita W, Kusuma Dharma Satrya Dewangga, Marintan Nirmalasari |
+
+Katalog kedua jabatan ini **bersih dari `detil_tugas` NULL** ⇒ **item 024 TIDAK menghalangi OPM.**
+Sesi OPM saat ini: **0**.
+
+### Yang BELUM — tes OPM, diblokir 023
+
+Tes berhenti **tepat sebelum OPM**. **Item 023 wajib diperbaiki DAN di-deploy lebih dulu** — tidak ada
+jalan memutar: satu-satunya jalur create adalah `POST /api/v1/opm/sesi`, dan jalur itu **selalu**
+memicu bug (jabatan tanpa panel/panel kosong ditolak di gerbang; panel berisi → auto-responden dari
+panel → `ForeignKeyViolation` → ditelan jadi 409 palsu). Terbukti gagal di 2 jabatan pada sesi ini,
+dan ~5 jabatan pada 2 sesi sebelumnya.
+
+**Langkah tes OPM begitu 023 ter-deploy:**
+
+1. `/opm/buat` → Jabatan = Koordinator Pramuka, sumber TI = `tises_c456dffb` ("2026-07 — 7 task"),
+   periode `2026-07`. Ulangi utk Pembina OSIS (`tises_cdebca82`, 3 task).
+2. Responden OPM **otomatis dari SELURUH anggota SME panel** (masing-masing **5 orang**) — bukan dari
+   3 responden TI. Hapus 2 responden berlebih **di sesi OPM** agar tersisa 3 orang yang sama seperti
+   tabel di atas. Pastikan `max_responden` ≥ 5 (kalau tidak → 422, lihat item 028/030).
+3. Tiap responden: **Kuesioner Saya** → kartu OPM → **Isi Sekarang** → nilai **tiap task** pada 3
+   dimensi (Importance/Frequency/Criticality, 1–5) → **Kirim Jawaban**.
+4. Admin: **Tutup Analisis** → **Jalankan Analisis** → halaman **Hasil** (mean/SD per dimensi + badge
+   Selection Essential / Workload Essential).
+5. Sekalian verifikasi **item 034** di sini (kolom "Jabatan" harus nama, bukan `jbt_…`).
+
+### Aturan kerja yang ditetapkan user (mengikat)
+
+**Data SME Panel di produksi JANGAN PERNAH disentuh** — tidak boleh tambah/hapus anggota. Untuk
+membatasi jumlah pengisi, hapus **responden di sesi** (data transaksi), bukan anggota panel.
+Konsekuensi: karena panel-panel itu anggotanya **disjoint**, skenario "3 partisipan yang sama di 2
+panel" (partisipan lintas-panel wajib isi Tahap 1 per panel) **belum pernah teruji** — catat sebagai
+lubang cakupan pengujian, bukan sebagai fitur yang sudah terbukti.
+
+### Catatan metodologis (kenapa 2 sesi tes sebelumnya buntu)
+
+Kedua root cause baru ketahuan setelah **endpoint dipanggil langsung dengan token**, bukan didiagnosis
+dari layar — UI menyembunyikan status HTTP asli (500 tampil sebagai "0 task"; `ForeignKeyViolation`
+tampil sebagai "sesi sudah ada"). Bila UI menunjukkan gejala aneh, **`curl`/API dulu, jangan menebak
+dari DOM.**

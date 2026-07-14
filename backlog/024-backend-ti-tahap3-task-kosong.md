@@ -1,8 +1,11 @@
 # Backlog 024 — TI: Tahap 3 menampilkan 0 task meski Task Terpilih sudah dibekukan
 
-> **Repo:** ⚠️ **BELUM TENTU backend** — dugaan awal "backend" tidak terbukti (lihat hasil investigasi)
-> **Status:** Menunggu **verifikasi di produksi** — kedua hipotesis awal GUGUR, root cause belum diketahui
-> **Blocked by:** deploy web-app 026 (agar error sesungguhnya terlihat) — atau token backend yang valid
+> **Repo:** `anjab-abk-backend` (terkonfirmasi)
+> **Status:** **SIAP DIEKSEKUSI** — root cause ditemukan & dibuktikan 2026-07-14 (sesi ketiga)
+> lewat panggilan API langsung ber-token. Bukan "0 task" — endpoint `task-terpilih`
+> **500 Internal Server Error** karena `detil_tugas` bernilai `NULL` di katalog.
+> Lihat "Root cause (2026-07-14, terbukti)" di bawah.
+> **Blocked by:** —
 > **Skill yang dipakai:** `backend-skill`, `automated-test-skill`
 > **Jangan commit tanpa instruksi eksplisit user.**
 
@@ -221,3 +224,99 @@ dan endpoint backend yang dipanggilnya) untuk:
 - Bug ini **berbeda** dari backlog 023 (OPM 409 "sesi sudah ada") — ditemukan di sesi/percobaan
   yang sama tapi merupakan cacat terpisah di TI, bukan OPM. Backlog 023 tetap terverifikasi masih
   terjadi (lihat update di file backlog 023) memakai jabatan Wali Kelas & Guru Kelas SD ini juga.
+
+---
+
+## Root cause (2026-07-14, sesi ketiga — TERBUKTI)
+
+Ditemukan dengan memanggil API produksi langsung memakai token admin (M2M), bukan lewat UI —
+sehingga status HTTP asli terlihat, tidak lagi tersembunyi di balik `?? []` web-app.
+
+### Bukti empiris
+
+Sesi `tises_434a8864` (Wali Kelas, TAHAP3, `jumlah_task_terpilih: 19`):
+
+| Endpoint | Status |
+|---|---|
+| `GET /api/v1/task-inventory/sesi/tises_434a8864` | **200** ✓ |
+| `GET .../sesi/tises_434a8864/responden` | **200** ✓ |
+| `GET .../sesi/tises_434a8864/tahap2` | **200** ✓ |
+| `GET .../sesi/tises_434a8864/task-terpilih` | **500** `{"error":"internal_error"}` ✗ |
+
+Sesi TAHAP3 lain (`tises_d3806654`, Koordinator Ekstrakurikuler) → `task-terpilih` **200**.
+Jadi bukan bug umum endpoint, tapi **bergantung data**.
+
+Membandingkan 16 kode task yang disetujui koordinator di sesi itu dengan katalog jabatannya:
+
+```
+catalog rows: 63 | rows dengan NULL detil_tugas: 1
+    WK-ALL-PD-001 | detil_tugas = None | tugas_pokok = 'Koordinasi'
+```
+
+`WK-ALL-PD-001` **termasuk** dalam himpunan task beku sesi tsb. Pemindaian seluruh katalog:
+**2 baris** ber-`detil_tugas` NULL di seluruh sistem — `WK-ALL-PD-001` (Wali Kelas) dan 1 baris
+di Wakil Kepala Sekolah Bidang Kurikulum. Hanya sesi yang membekukan salah satu kode itu yang kena.
+
+### Mekanisme (kode aktual)
+
+1. `taskinv/services/catalog.py:157` — `detil_tugas=dt.nama if dt else None` → `TiCatalogRead.detil_tugas`
+   memang **nullable** (`str | None`). ✓
+2. `taskinv/schemas/hasil.py:17` — `TiTaskTerpilihRead.detil_tugas: str` → **wajib, non-nullable**. ✓
+3. `taskinv/services/analisis.py:39` — `detil_tugas=cat.detil_tugas if cat else ""`.
+   Fallback `""` hanya menangani kasus **katalog hilang** (`cat is None`). Bila `cat` **ada**
+   tapi `cat.detil_tugas is None`, yang dioper adalah `None` → **Pydantic ValidationError** →
+   500. ✓
+4. Cacat **identik** di `analisis.py:103` (`compute_hasil_sesi`) → `GET /sesi/{id}/hasil` dan
+   `POST /sesi/{id}/analisis` juga 500 untuk sesi yang sama.
+
+### Kenapa investigasi sebelumnya menyimpulkan hipotesis (b) "GUGUR"
+
+Catatan investigasi lama menyatakan hipotesis "INNER JOIN `detil_tugas_id: null`" gugur karena
+`catalog.py:148` & `analisis.py:32-53` "justru tetap mengemit baris meski katalog hilang". Itu
+**benar tapi tidak relevan** — kasus yang sebenarnya terjadi bukan *katalog hilang*, melainkan
+*katalog ADA dengan `detil_tugas` NULL*. Fallback `if cat else ""` menutup kasus pertama dan
+justru **membiarkan** kasus kedua lolos ke Pydantic. Hipotesis (b) sebetulnya **hampir benar**;
+yang keliru adalah cara pengujiannya.
+
+### Kenapa gejalanya "0 task" (bukan pesan error)
+
+Web-app (sebelum perbaikan 026) menelan error API dengan `?? []` → 500 tampil sebagai daftar
+kosong. Setelah 026, penelanan hilang → gejalanya berubah jadi **halaman detail sesi crash total**
+("Gagal memuat detail analisis" / Server Components render error), yang memang teramati
+2026-07-14. Sesi itu bahkan **tidak bisa dihapus lewat UI** karena tombolnya ikut tak terender.
+
+## Perbaikan (terkunci)
+
+`taskinv/services/analisis.py` — **dua** tempat, baris **39** dan **103**:
+
+```python
+# SEBELUM
+detil_tugas=cat.detil_tugas if cat else "",
+# SESUDAH
+detil_tugas=(cat.detil_tugas or "") if cat else "",
+```
+
+Pertimbangkan juga `tugas_pokok` (baris 38 & 102): `TiCatalogRead.tugas_pokok` saat ini
+non-nullable (`catalog.py:154` mengoper `tp.nama` langsung), jadi belum bisa NULL — **tapi**
+`_to_catalog` akan `AttributeError` bila `tp is None`. Di luar lingkup item ini; catat saja.
+
+### Keputusan yang dikunci
+
+- **Perbaiki di lapisan penyaji (`analisis.py`), BUKAN dengan membersihkan data katalog.**
+  `detil_tugas` memang boleh NULL menurut model (`TiCatalogRead`), jadi penyaji yang wajib
+  toleran. Membersihkan 2 baris data hanya menyembunyikan bug sampai ada uraian tugas baru
+  tanpa detil tugas.
+- Sesi produksi yang sudah terlanjur beku dengan kode bermasalah **langsung pulih** begitu
+  perbaikan ini di-deploy (tidak perlu migrasi/backfill).
+
+## Skenario uji (wajib)
+
+- [ ] Uraian tugas dengan `detil_tugas_id = NULL` → `GET /sesi/{id}/task-terpilih` **200**,
+      field `detil_tugas` berisi `""` (bukan 500).
+- [ ] Sesi yang sama → `GET /sesi/{id}/hasil` & `POST /sesi/{id}/analisis` **200**.
+- [ ] Regresi: sesi tanpa NULL apa pun tetap berperilaku sama.
+
+## Kriteria penerimaan
+
+- [ ] `make test` hijau, dengan test baru yang gagal sebelum perbaikan.
+- [ ] Diverifikasi di produksi: sesi Wali Kelas (atau yang setara) bisa dibuka & dianalisis.
