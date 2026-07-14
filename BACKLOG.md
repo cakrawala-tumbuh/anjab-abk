@@ -8,12 +8,16 @@ Detail tiap item ada di `backlog/<id>-<slug>.md`. Konvensi & cara pakai: lihat b
 
 ## Aktif
 
-_(tidak ada item aktif saat ini)_
+| ID | Item | Repo | Status | Blocked by |
+|---|---|---|---|---|
+| [023](backlog/023-backend-opm-sesi-hilang-dari-listing.md) | Backend: OPM 409 "sesi sudah ada" utk jabatan yang tidak muncul di listing `/opm` (sistemik, blokir seluruh alur OPM) | backend | **Menunggu investigasi produksi** (bukan siap dieksekusi) | — |
 
 ## Selesai
 
 | ID | Item | Repo | Status | Blocked by |
 |---|---|---|---|---|
+| [022](backlog/022-backend-resolusi-jabatan-label-dcs-wcp.md) | Backend: resolusi `jabatan_label` DCS & WCP (bukan salinan ID mentah) | backend | Selesai 2026-07-14 (`JabatanService` disuntik ke `SqlDcsRespondenService`/`SqlWcpRespondenService`, resolusi di `create_banyak()` dgn fallback `NotFoundError`→ID mentah+warning; `create()` sengaja tak disentuh; `make test` hijau 531 test; `openapi.json` diverifikasi tanpa diff via worktree terpisah; belum di-commit) | — |
+| [021](backlog/021-web-app-konfirmasi-jalankan-analisis-dcs-wcp.md) | Web app: konfirmasi sebelum "Jalankan Analisis" DCS & WCP | web-app | Selesai 2026-07-14 (`confirm()` native ditambah sbg baris pertama `doAnalisis()` di `dcs/aksi-instrumen.tsx` & `wcp/aksi-instrumen.tsx` dgn teks pesan terkunci; 2 file test baru dari nol; `make test` hijau 186 test, `npm run build` sukses; belum di-commit) | — |
 | [020](backlog/020-mcp-selaraskan-dcs-wcp-tambah-responden.md) | MCP: selaraskan `dcs_tambah_responden`/`wcp_tambah_responden` dengan `BulkAssignResult` | mcp | Selesai 2026-07-14 (ditemukan sebagai efek samping audit 018; anotasi tipe `-> dict` + docstring `{created, skipped}` + alasan skip benar untuk 2 tool; `make test` hijau 87 test; belum di-commit) | 018 |
 | [019](backlog/019-web-app-assign-responden-dcs-wcp-tampilkan-skipped.md) | Web app: tampilkan responden yang di-skip pada assign DCS & WCP | web-app | Selesai 2026-07-14 (panel ringkasan `created`/`skipped` ditiru persis dari `opm/assign-responden-banyak.tsx`, reuse `formatAlasanSkip`, checkbox skip tetap tercentang; `schema.ts` diregenerasi dari `openapi.json` 018; `make test` hijau 182 test, `npm run build` sukses; belum di-commit) | 018 |
 | [018](backlog/018-backend-assign-responden-dcs-wcp-skipped.md) | Backend: assign responden DCS & WCP kembalikan `BulkAssignResult` (dengan `skipped[]`) | backend | Selesai 2026-07-14 (service `responden_create` DCS & WCP diseragamkan dengan pola bulk OPM — idempoten, skip alih-alih menelan; `response_model=BulkAssignResult[...]`; `openapi.json` diregenerasi, breaking change; `make test` hijau 527 test; belum di-commit) | — |
@@ -34,6 +38,99 @@ _(tidak ada item aktif saat ini)_
 | [002](backlog/002-mcp-selaraskan-tool-dcs-wcp.md) | MCP: selaraskan tool DCS & WCP dengan model tanpa sesi | mcp | Selesai (commit `63527a8`, di luar sesi ini) | — |
 | [003](backlog/003-web-app-hapus-ui-sesi-dcs-wcp.md) | Web app: hapus UI sesi DCS & WCP, tambah halaman hasil agregat | web-app | Selesai (commit `13ac956`, di luar sesi ini) | — |
 | [007](backlog/007-web-app-bulk-penugasan-alat-ukur.md) | Web app: UI penugasan massal (bulk) TS/TI/OPM, berdampingan dengan form single | web-app | Selesai (commit `9a2375d`, di luar sesi ini) | — |
+
+---
+
+## Konteks lintas-item: asal item 021–022 (simulasi SOP DCS end-to-end)
+
+Item 021 dan 022 lahir dari **simulasi end-to-end SOP Persiapan + Pelaksanaan DCS** via Playwright
+di deployment YPII (`anjab-abk.cantum-ypii.com`, 2026-07-14) — 3 partisipan sungguhan (A. Widjianto,
+Agustina Megawati Siahaan, Agustinus Purnomo) di-assign sebagai responden, mengisi 42 item jawaban
+acak, hingga instrumen ditutup dan dianalisis, dipandu `docs-usage/sop/persiapan-dcs.md` dan
+`pelaksanaan-dcs.md`.
+
+Alur inti **terbukti benar end-to-end**: instrumen singleton (status Terbuka→Tertutup→Teranalisis)
+berjalan sesuai dokumentasi, draft-save (`Simpan`) persisten lintas reload, validasi "semua item
+wajib sebelum kirim final" bekerja, hasil agregat (mean/stdev/Cronbach α per sub-skala, K-Index
+menunggu WCP) tampil sesuai spesifikasi.
+
+Dua celah nyata ditemukan di lapisan sekitarnya:
+
+- **021**: tombol "Jalankan Analisis" — satu-satunya aksi yang dokumentasinya sendiri menyebut
+  "tidak dapat dibatalkan" — tidak punya `confirm()`, berbeda dari "Tutup Pengisian" di komponen
+  yang sama yang sudah dijaga dengan benar.
+- **022**: kolom Jabatan di tabel Daftar Responden & halaman hasil-responden menampilkan ID
+  internal mentah (`jbt_xxxxx`) alih-alih nama jabatan — ini sudah diketahui & sengaja ditunda sejak
+  revisi `[2026-07-12]` `CLAUDE.md` backend ("di luar lingkup revisi ini"), item ini menuntaskannya.
+
+Sebagai efek samping pengujian: instrumen DCS produksi sempat diubah `min_responden` 6→3 (dikembalikan
+ke 6 setelah selesai) dan kini berstatus **Teranalisis** dengan data uji coba dari 3 partisipan di
+atas — bukan data DCS asli. Lihat "Risiko & catatan" di masing-masing file 021/022.
+
+**Kedua file diperketat lewat verifikasi kode langsung (2 Explore agent terpisah)** sebelum
+dianggap "Siap dieksekusi", atas permintaan eksplisit user agar bisa dijalankan Sonnet tanpa
+interpretasi ulang. Temuan yang mengoreksi draf awal: 021 ternyata tidak punya test existing sama
+sekali untuk `aksi-instrumen` (dua file test baru harus dibuat dari nol, bukan diperluas) dan teks
+pesan `confirm()` dikunci eksplisit di file (bukan placeholder); 022 ternyata TIDAK punya jalur
+single-assign yang hidup sama sekali untuk DCS/WCP (method `create()` adalah kode Protocol yang
+tidak terpakai — premis awal "verifikasi juga jalur single-assign" gugur), dan ditemukan konflik
+arsitektur nyata (pola OPM yang melanggar aturan cross-domain repo sendiri vs. pola seam Service
+yang konsisten) yang harus diputuskan eksplisit di file — dipilih pola kedua (suntik
+`JabatanService` via DI yang sudah ada), bukan meniru OPM.
+
+**Re-verifikasi 022 (2026-07-14, Explore agent independen kedua)**: seluruh 8 klaim "Kondisi
+sekarang" di file 022 dicek ulang terhadap kode sungguhan — **8/8 cocok persis**, tidak ada baris
+bergeser atau kode berubah. Satu presisi dikoreksi (bukan kesalahan fakta besar): deskripsi
+pemakaian fixture `jabatan_id_tk` semula menyebut `test_opm_responden.py` memakainya "via
+`partisipan_factory(...)`-style override" — faktanya file itu memakai helper terpisah
+`_buat_partisipan()` di `tests/_opm_common.py`, bukan `partisipan_factory` sama sekali. File 022
+sudah diperbarui agar eksekutor tidak mencari pemanggilan yang tidak ada.
+
+**Simulasi SOP WCP terpisah (2026-07-14)** mengulang simulasi di atas khusus untuk WCP (3 responden
+uji coba yang sama, 72 item jawaban acak) dan **mereproduksi persis kedua gejala 021/022** —
+tidak ada temuan baru, hanya menguatkan cakupan "DCS dan WCP" yang sudah dikunci di kedua file.
+Alur inti WCP juga **terbukti benar end-to-end**: instrumen singleton, draft-save (`Simpan`)
+persisten lintas reload, validasi "semua item wajib sebelum kirim final", hasil agregat per
+dimensi (mean/stdev/Cronbach α + interpretasi CUKUP/PERLU PERHATIAN/WASPADA untuk dimensi risiko)
+tampil sesuai `docs-usage/sop/persiapan-wcp.md` & `pelaksanaan-wcp.md`. Detail lengkap di memory
+`wcp-test-run-2026-07-14`.
+
+---
+
+## Konteks: asal item 023 (simulasi SOP TI + OPM end-to-end)
+
+Item 023 lahir dari **simulasi end-to-end SOP Persiapan + Pelaksanaan Task Inventory (TI) dan
+OPM** di deployment YPII (`anjab-abk.cantum-ypii.com`, 2026-07-14, via Playwright), memakai 3
+partisipan asli (Theresia Avila Yuanita W, Yayuk Tri Wahyuni, Y. Krisdiantoro Setyawan; lalu
+Vinantius Sutarno & V. Gandono utk percobaan ke-3) di 3 SME panel berbeda (Pembina OSIS, Guru
+Mapel SMP, Koordinator Pramuka).
+
+**Alur TI terbukti benar end-to-end untuk ketiga jabatan**: auto-populate responden dari SME
+panel saat sesi dibuat, koordinator sesi otomatis diwarisi dari koordinator panel (fitur 008),
+partisipan yang jadi anggota 2 panel sekaligus (Theresia) berhasil mengisi Tahap 1 terpisah utk
+tiap panel (sesuai tip SOP), cascade 3-langkah (Tugas Pokok → Detil Tugas → Uraian Tugas)
+menyaring dengan tepat, review koordinator Tahap 2 (Ya/Tidak per task partial) tersimpan benar,
+pembekuan Tahap 3 (unanimous ∪ disetujui koordinator) akurat, isian CalHR (termasuk toggle
+"Setuju dengan isian standar" acak) tersimpan, dan hasil agregasi (jam/minggu, jam/tahun, badge
+DCS) tampil sesuai `docs-usage/sop/persiapan-task-inventory.md` &
+`pelaksanaan-task-inventory.md`. Tidak ada bug baru ditemukan di alur TI.
+
+**Alur OPM gagal total** — lihat detail lengkap di **023**. Percobaan pertama (Pembina OSIS,
+Guru Mapel SMP) awalnya diduga tersisa data lama dari studi sebelumnya (409 "sesi sudah ada"
+padahal tidak muncul di listing `/opm`); untuk memastikan bukan kebetulan, dicoba jabatan
+ketiga (Koordinator Pramuka) dengan TI yang **dibuat & dianalisis dari nol di sesi yang sama**
+— 409 yang sama tetap muncul, menaikkan status dari "mungkin data lama" ke **bug sistemik yang
+memblokir pembuatan Analisis Jabatan OPM untuk jabatan apa pun**. Review kode (frontend +
+backend, via Explore agent) tidak menemukan cacat logika di listing maupun constraint create —
+akar masalah kemungkinan di luar apa yang bisa diverifikasi lewat pembacaan kode statis (lihat
+"Kemungkinan penyebab" di 023), termasuk temuan sampingan yang mencurigakan: `GET /openapi.json`
+produksi melaporkan versi backend `0.26.0`, jauh di belakang `CHANGELOG.md` repo (`0.33.0`
+Unreleased), padahal fitur dari rilis setelahnya (auth guard sesi TI, pewarisan koordinator)
+terbukti aktif di produksi.
+
+Detail lengkap simulasi (ID sesi TI test, partisipan yang dipakai, kredensial yang diakses) ada
+di memory project `ti-opm-test-run-2026-07-14` — **jangan** asumsikan 3 sesi TI produksi yang
+dipakai (Pembina OSIS, Guru Mapel SMP, Koordinator Pramuka) bersih dari data uji coba.
 
 ---
 
