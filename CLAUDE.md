@@ -67,28 +67,33 @@ Pengisian Task Inventory dibagi menjadi **3 tahap** dengan status sesi: `DRAFT �
 
 ## Backlog
 
-Pekerjaan yang **sudah direncanakan tapi belum dieksekusi** dicatat sebagai berkas Markdown di repo
-induk ini — bukan di sub-repo — karena banyak pekerjaan menyentuh dua atau tiga sub-repo sekaligus.
+Backlog hidup sebagai **GitHub Issue di sub-repo yang kodenya berubah** — bukan sebagai berkas
+Markdown di repo induk ini. Gunakan skill **`backlog-skill`** untuk seluruh pengelolaannya.
 
-- **[`BACKLOG.md`](BACKLOG.md)** — indeks: satu baris per item (ID, judul, repo, status, blocked-by).
-  Ini satu-satunya tempat melihat urutan & ketergantungan antar item.
-- **`backlog/<id>-<slug>.md`** — satu berkas per item, berisi rencana **detail dan siap dieksekusi**.
-- **[`backlog/TEMPLATE.md`](backlog/TEMPLATE.md)** — struktur wajib item baru.
+| Repo | Backlog |
+|---|---|
+| `anjab-abk-backend` | https://github.com/cakrawala-tumbuh/anjab-abk-backend/issues |
+| `anjab-abk-web-app` | https://github.com/cakrawala-tumbuh/anjab-abk-web-app/issues |
+| `anjab-abk-mcp` | https://github.com/cakrawala-tumbuh/anjab-abk-mcp/issues |
 
 Aturan:
 
-1. Item backlog ditulis cukup lengkap sehingga agen pelaksana (mis. Sonnet) bisa mengeksekusinya
-   **tanpa menginterpretasi ulang** — sertakan keputusan yang sudah dikunci, fakta kode aktual
-   (`path:baris`, ditandai ✓), langkah konkret, kriteria penerimaan, skenario uji, dan definition of done.
-2. **Satu item = satu repo.** Pekerjaan lintas repo dipecah per repo dan diurutkan lewat kolom
-   *blocked by* (mis. backend dulu → MCP & web app menyusul setelah `openapi.json` berubah).
-3. Item yang sudah dieksekusi dipindahkan ke tabel "Selesai" di `BACKLOG.md`, berkasnya tetap
-   disimpan sebagai jejak keputusan.
-4. Saat berada di **plan mode** untuk pekerjaan anjab-abk, materialisasikan rencananya jadi item
-   backlog — jangan biarkan hanya jadi rencana sesaat di dalam percakapan.
+1. **GitHub Issue = satu-satunya sumber kebenaran.** Jangan membuat `BACKLOG.md`, `TODO.md`, atau
+   daftar tandingan lain di repo mana pun — dua sumber kebenaran berarti tidak ada sumber kebenaran.
+2. **Satu item = satu repo.** Pekerjaan lintas repo dipecah jadi satu issue per repo, ditautkan dua
+   arah dengan `owner/repo#N` dan diberi label `lintas-project`. Repo induk ini **tidak menampung
+   issue backlog** karena kodenya tidak berubah.
+3. Item ditulis cukup lengkap sehingga agen pelaksana (mis. Sonnet) bisa mengeksekusinya **tanpa
+   menginterpretasi ulang** — fakta kode aktual (`path:baris`), langkah konkret, kriteria
+   penerimaan, skenario uji, definition of done. Format wajib ada di `backlog-skill`.
+4. **Status = state issue + label**, bukan teks di body. Selesai = ditutup dengan reason
+   `completed`; batal = `not planned`. Perkembangan ditulis sebagai komentar.
+5. Saat berada di **plan mode** untuk pekerjaan anjab-abk, materialisasikan rencananya jadi issue —
+   jangan biarkan hanya jadi rencana sesaat di dalam percakapan.
 
-Berkas `rencana-*.md` / `plan-*.md` di akar repo adalah format **lama** (sebelum mekanisme ini ada).
-Jangan tambah yang baru; tulis item backlog.
+Backlog lama (berkas `BACKLOG.md`, `backlog/`, `rencana-*.md`, `plan-*.md`) sudah dimigrasikan ke
+GitHub Issue pada 2026-07-17 dan berkasnya dihapus; isinya tetap terbaca lewat riwayat git. Tiap
+issue hasil migrasi menyebut ID lamanya (`ID lama NNN`) sehingga rujukan lama masih bisa dilacak.
 
 ## Development Guidelines
 
